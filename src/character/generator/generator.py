@@ -5,7 +5,7 @@
 import random
 
 
-def capture(chars):
+def generate_sequence(chars):
   pseudo_sequence = ''
   if chars != None and isinstance(chars, int):
     while chars > 0:
@@ -19,8 +19,11 @@ def capture(chars):
       elif pseudo_bit == (4 or 5):
         pseudo_small_alpha = chr(random.randint(97, 122))
         pseudo_sequence += pseudo_small_alpha
-      else:
+      elif pseudo_bit == 6:
         pseudo_symbol = chr(random.randint(33, 47))
         pseudo_sequence += pseudo_symbol
+      else:
+        pseudo_small_alpha = chr(random.randint(97, 122))
+        pseudo_sequence += pseudo_small_alpha
       chars -= 1
   print(pseudo_sequence)
